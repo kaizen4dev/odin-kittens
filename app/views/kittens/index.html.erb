@@ -1,0 +1,4 @@
+<h1>All Kittens</h1>
+<%= button_to "New Kitten", new_kitten_path, method: :get %>
+
+<%= render(partial: "kitten", collection: @kittens, as: :kitten) %>

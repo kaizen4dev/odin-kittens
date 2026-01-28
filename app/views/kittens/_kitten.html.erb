@@ -1,0 +1,11 @@
+<hr>
+<div class="kitten">
+  <p>Name: <%= kitten.name %></p>
+  <p>Age: <%= kitten.age %></p>
+  <p>Cuteness: <%= kitten.cuteness %></p>
+  <p>Softness: <%= kitten.softness %></p>
+  <div class="buttons">
+    <%= button_to "Delete", kitten_path(id: kitten.id), method: :delete %>
+    <%= button_to "Edit", edit_kitten_path(id: kitten.id), method: :get %>
+  </div>
+</div>
