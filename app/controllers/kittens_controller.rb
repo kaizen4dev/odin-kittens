@@ -21,6 +21,10 @@ class KittensController < ApplicationController
     end
   end
 
+  def edit
+    @kitten = Kitten.find params[:id]
+  end
+
   private
 
   def kitten_params
