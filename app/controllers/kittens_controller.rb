@@ -35,6 +35,12 @@ class KittensController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+  def destroy
+    @kitten = Kitten.find params[:id]
+    @kitten.destroy
+  end
+
   private
 
   def kitten_params
