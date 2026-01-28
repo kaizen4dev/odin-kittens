@@ -10,4 +10,20 @@ class KittensController < ApplicationController
   def new
     @kitten = Kitten.new
   end
+
+  def create
+    @kitten = Kitten.new(kitten_params)
+
+    if @kitten.save
+      redirecto_to @kitten
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  private
+
+  def kitten_params
+    params.expect kitten: [:name, :age, :cuteness, :softness]
+  end
 end
