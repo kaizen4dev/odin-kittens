@@ -6,4 +6,8 @@ class KittensController < ApplicationController
   def show
     @kitten = Kitten.find params[:id]
   end
+
+  def new
+    @kitten = Kitten.new
+  end
 end
