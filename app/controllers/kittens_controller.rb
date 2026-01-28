@@ -15,7 +15,7 @@ class KittensController < ApplicationController
     @kitten = Kitten.new(kitten_params)
 
     if @kitten.save
-      redirecto_to @kitten
+      redirect_to @kitten
     else
       render :new, status: :unprocessable_entity
     end
@@ -39,6 +39,7 @@ class KittensController < ApplicationController
   def destroy
     @kitten = Kitten.find params[:id]
     @kitten.destroy
+    redirect_to :root
   end
 
   private
